@@ -21,7 +21,7 @@
 ### Error: getaddrinfo ENOTFOUND localhost
 localhost 没有绑定 127.0.0.1
 
-### Support for the experimental syntax 'classProperties' isn't currently enabled
+### SyntaxError:Support for the experimental syntax 'classProperties' isn't currently enabled
 ```
 npm i -D @babel/plugin-proposal-class-properties
 

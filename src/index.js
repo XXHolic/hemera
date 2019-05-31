@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import addCommonAttribute from "./decorator.js";
+@addCommonAttribute
 class HelloWorld extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +11,10 @@ class HelloWorld extends React.Component {
     };
 
     this.onChangeText = this.onChangeText.bind(this);
+  }
+
+  componentDidMount() {
+    console.log("isDecorator:", HelloWorld.isDecorator);
   }
 
   onChangeText() {
