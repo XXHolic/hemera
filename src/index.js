@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 class HelloWorld extends React.Component {
   constructor(props) {
@@ -14,18 +14,27 @@ class HelloWorld extends React.Component {
 
   onChangeText() {
     this.setState({
-      text:'React'
+      text: "React"
     });
   }
 
+  onClickMe = () => {
+    this.setState({
+      text: "you clicked"
+    });
+  };
+
   render() {
     const { text } = this.state;
+    let templateSy = `${text}模板变量语法`;
 
     return (
       <div>
         Hello,{text}
+        <p>{templateSy}</p>
         <div>
           <button onClick={this.onChangeText}>change text</button>
+          <button onClick={this.onClickMe}>Click Me</button>
         </div>
       </div>
     );
@@ -34,5 +43,5 @@ class HelloWorld extends React.Component {
 
 ReactDOM.render(
   React.createElement(HelloWorld),
-  document.querySelector('body')
+  document.querySelector("body")
 );

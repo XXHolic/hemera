@@ -1,4 +1,6 @@
 # think
+
+## 第一步
 在搭建一个项目的时候，个人一开始想到的就是资源打包输出。处理资源打包的有很多工具，例如 Grunt、gulp。由于现在工作中接触到大部分是 webpack。所以选择了 webpack。那么首先就从运行一个简单的 react 开始。
 
 按照 webpack 指南中进行，可以发现一开始需要配置要的有：
@@ -11,3 +13,19 @@
 转义很容易就想到 babel ，不仅要转义新的 js 语法，还要转义 react 的语法，都是在 babel 里面，想要在 webpack 里面使用 babel 的功能，就需要使用 babel-loader。
 
 按照文档添加了配置后，本地手动 build 一下也正常，当在浏览器中访问，提示报错了，而且都是压缩的代码，不知道具体是哪里错了，报错也提示在开发环境下调试比较好，于是就需要弄个本地的开发环境，webpack 文档中也有，按照配置好了后，才算真正的运行了一个 demo。
+
+## 第一步
+在添加箭头函数后，发现虽然可以转义，发现有些语法转义默认是没有开启的，例如 class 和 箭头函数。这时需要找到对应的插件，如果有必要需要进行安装。
+
+## 问题
+### Error: getaddrinfo ENOTFOUND localhost
+localhost 没有绑定 127.0.0.1
+
+### Support for the experimental syntax 'classProperties' isn't currently enabled
+```
+npm i -D @babel/plugin-proposal-class-properties
+
+{
+  plugins: ['@babel/plugin-proposal-class-properties']
+}
+```

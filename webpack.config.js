@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path");
 // 自动生成对应的 html
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // 清除之前旧的文件
@@ -18,21 +18,25 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: [["@babel/preset-env"], ["@babel/preset-react"]]
+            presets: [["@babel/preset-env"], ["@babel/preset-react"]],
+            plugins: [
+              "@babel/transform-arrow-functions",
+              "@babel/plugin-proposal-class-properties"
+            ]
           }
         }
       }
     ]
   },
-  plugins:[
+  plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Hello React'
+      title: "Hello React"
     })
   ],
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   devServer: {
-    contentBase:'./dist',
-    port:9000
+    contentBase: "./dist",
+    port: 9000
   }
 };
