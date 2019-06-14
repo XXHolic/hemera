@@ -14,7 +14,7 @@
 
 按照文档添加了配置后，本地手动 build 一下也正常，当在浏览器中访问，提示报错了，而且都是压缩的代码，不知道具体是哪里错了，报错也提示在开发环境下调试比较好，于是就需要弄个本地的开发环境，webpack 文档中也有，按照配置好了后，才算真正的运行了一个 demo。
 
-## 第一步
+## 第二步
 在添加箭头函数后，发现虽然可以转义，发现有些语法转义默认是没有开启的，例如 class 和 箭头函数。这时需要找到对应的插件，如果有必要需要进行安装。
 
 ## 问题
@@ -29,3 +29,16 @@ npm i -D @babel/plugin-proposal-class-properties
   plugins: ['@babel/plugin-proposal-class-properties']
 }
 ```
+
+## 插件
+```shell
+npm install packageName --save-dev
+```
+### html-webpack-plugin
+通过配置，自动生成所需要的 html 文件，https://github.com/jantimon/html-webpack-plugin#configuration
+
+### style-loader
+将模块的导出作为样式添加到 DOM 中
+
+### css-loader
+解析 CSS 文件后，使用 import 加载，并且返回 CSS 代码
