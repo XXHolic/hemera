@@ -42,3 +42,20 @@ npm install packageName --save-dev
 
 ### css-loader
 解析 CSS 文件后，使用 import 加载，并且返回 CSS 代码
+
+### file-loader
+图片、字体
+
+### url-loader
+url-loader 功能类似于 file-loader，但是在文件大小（单位 byte）低于指定的限制时，可以返回一个 DataURL。
+这次试用来处理
+
+https://cloud.tencent.com/developer/column/5154/tag-10629
+
+### less-loader
+加载和转译 LESS 文件，需要 less 支持，所以也要安装
+
+npm install --save-dev less-loader less
+
+### sass-loader
+npm install sass-loader node-sass --save-dev
