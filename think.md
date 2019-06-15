@@ -59,3 +59,12 @@ npm install --save-dev less-loader less
 
 ### sass-loader
 npm install sass-loader node-sass --save-dev
+
+### px2rem-loader
+单位转换
+旧闻：https://github.com/amfe/article/issues/17
+新方案：https://juejin.im/post/5cb078f05188251ace1fedb4
+
+### extract-text-webpack-plugin
+提取分离 css
+npm install --save-dev extract-text-webpack-plugin
