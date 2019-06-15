@@ -65,6 +65,11 @@ npm install sass-loader node-sass --save-dev
 旧闻：https://github.com/amfe/article/issues/17
 新方案：https://juejin.im/post/5cb078f05188251ace1fedb4
 
-### extract-text-webpack-plugin
-提取分离 css
+### extract-text-webpack-plugin（abandon）
+提取分离 css  已过时
 npm install --save-dev extract-text-webpack-plugin
+
+### mini-css-extract-plugin
+提取分离 css
+
+https://github.com/webpack-contrib/mini-css-extract-plugin
