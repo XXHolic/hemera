@@ -17,7 +17,7 @@ class Message extends Component {
 
     return (
       <div className="main-container flex-column">
-        <Header />
+        <Header content="X 信" />
         <div className="flex1">
           <div className="tc">
             <img src={logo} />

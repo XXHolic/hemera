@@ -77,6 +77,9 @@ https://github.com/webpack-contrib/mini-css-extract-plugin
 ### CommonsChunkPlugin
 在 webpack4 中已移除
 
+### webpack-bundle-analyzer
+分析
+
 ## 遇到问题
 #### react router 4 与之前不同
 https://www.jianshu.com/p/bf6b45ce5bcc

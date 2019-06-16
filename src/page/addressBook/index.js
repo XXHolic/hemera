@@ -17,7 +17,7 @@ class AddressBook extends Component {
 
     return (
       <div className="main-container flex-column">
-        <Header />
+        <Header content="通讯录" />
         <div className="flex1">
           <div className="tc">
             <div>{msg}</div>

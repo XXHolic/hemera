@@ -3,8 +3,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // 清除之前旧的文件
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-
+// 抽离 css
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 
 module.exports = {
   entry: "./src/index.js",
@@ -90,5 +91,16 @@ module.exports = {
     contentBase: "./dist",
     port: 9000,
     historyApiFallback: true
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all"
+        }
+      }
+    }
   }
 };
