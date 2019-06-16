@@ -35,13 +35,17 @@
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^2.0.0",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.4.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1"
   }
 }

@@ -5,4 +5,4 @@ import './css/normalize.css';
 import './font/iconfont.css'
 import './css/common.less';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />,document.getElementById("root"));

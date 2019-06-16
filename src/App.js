@@ -1,18 +1,17 @@
-import React, { Component } from "react";
-import Home from './page/home'
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
+import React from "react";
+import { BrowserRouter as Router,Route,Redirect } from "react-router-dom";
+import Message from './page/message';
+import AddressBook from "./page/addressBook";
 
-  componentDidMount() {
-  }
+const App = () => {
 
-  render() {
-    return (
-      <Home></Home>
-    );
-  }
+  return (
+    <Router>
+      <Route path="/" exact component={Message} />
+      <Route path="/page/addressBook" exact component={AddressBook} />
+      <Redirect to="/" />
+    </Router>
+  );
 }
 
 export default App;

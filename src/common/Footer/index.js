@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+
 import "./style.scss";
 
 class Footer extends Component {
@@ -7,12 +9,16 @@ class Footer extends Component {
      return (
        <div className="df main-footer">
          <div className="flex-column flex1 tc main-footer-nav">
-           <span className="iconfont">&#xe652;</span>
-           <div>X 信</div>
+           <Link to="/">
+             <span className="iconfont">&#xe652;</span>
+             <div>X 信</div>
+           </Link>
          </div>
          <div className="flex-column flex1 tc main-footer-nav">
-           <span className="iconfont">&#xe624;</span>
-           <div>通讯录</div>
+           <Link to="/page/addressBook">
+             <span className="iconfont">&#xe624;</span>
+             <div>通讯录</div>
+           </Link>
          </div>
          <div className="flex-column flex1 tc main-footer-nav">
            <span className="iconfont">&#xe628;</span>

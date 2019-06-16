@@ -73,3 +73,13 @@ npm install --save-dev extract-text-webpack-plugin
 提取分离 css
 
 https://github.com/webpack-contrib/mini-css-extract-plugin
+
+### CommonsChunkPlugin
+在 webpack4 中已移除
+
+## 遇到问题
+#### react router 4 与之前不同
+https://www.jianshu.com/p/bf6b45ce5bcc
+
+### 刷新后 资源或页面 404
+https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually/36623117#36623117

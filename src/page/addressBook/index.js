@@ -1,22 +1,26 @@
 import React, {Component} from 'react';
 import Footer from '../../common/Footer'
 import Header from '../../common/Header'
-import './home.scss';
-import logo from '../../images/logo.svg'
+import _ from 'lodash';
 
-class Home extends Component {
+import './addressBook.scss'
+
+
+class AddressBook extends Component {
 
   componentDidMount() {
 
   }
 
   render () {
+    const msg = _.join(["Address-", "Book"], "");
+
     return (
       <div className="main-container flex-column">
         <Header />
         <div className="flex1">
           <div className="tc">
-            <img src={logo} />
+            <div>{msg}</div>
           </div>
         </div>
         <Footer />
@@ -25,4 +29,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default AddressBook;

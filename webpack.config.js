@@ -35,7 +35,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader
           },
-          "css-loader",
+          "css-loader"
         ]
       },
       {
@@ -45,7 +45,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader
           },
           "css-loader",
-          "less-loader",
+          "less-loader"
         ]
       },
       {
@@ -88,6 +88,7 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     contentBase: "./dist",
-    port: 9000
+    port: 9000,
+    historyApiFallback: true
   }
 };
