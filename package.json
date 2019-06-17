@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js",
+    "build": "webpack --env.NODE_ENV=production --config webpack.config.js",
     "start": "webpack-dev-server --open",
     "analyse": "webpack --profile --json > stats.json",
     "show": "webpack-bundle-analyzer ./stats.json"
