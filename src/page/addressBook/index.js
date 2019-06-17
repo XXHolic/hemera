@@ -20,7 +20,7 @@ class AddressBook extends Component {
         <Header content="通讯录" />
         <div className="flex1">
           <div className="tc">
-            <div>{msg}</div>
+            <div className="address-book-text">{msg}</div>
           </div>
         </div>
         <Footer />

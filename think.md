@@ -30,6 +30,13 @@ npm i -D @babel/plugin-proposal-class-properties
 }
 ```
 
+### react router 4 与之前不同
+https://www.jianshu.com/p/bf6b45ce5bcc
+
+### 刷新后 资源或页面 404
+https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually/36623117#36623117
+
+
 ## 插件
 ```shell
 npm install packageName --save-dev
@@ -79,10 +86,3 @@ https://github.com/webpack-contrib/mini-css-extract-plugin
 
 ### webpack-bundle-analyzer
 分析
-
-## 遇到问题
-#### react router 4 与之前不同
-https://www.jianshu.com/p/bf6b45ce5bcc
-
-### 刷新后 资源或页面 404
-https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually/36623117#36623117
