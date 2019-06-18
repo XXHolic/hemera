@@ -18,7 +18,7 @@ module.exports = env => {
     mode: isProduction ? "production" : "development",
     entry: "./src/index.js",
     output: {
-      filename: isProduction ? "[name].[contenthash].js" : "[name].[hash].js",
+      filename:"[name].[hash].js",
       path: path.resolve(__dirname, "dist"),
       publicPath: "/"
     },
