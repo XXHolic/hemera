@@ -6,14 +6,17 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 // 抽离 css
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+var OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+
 module.exports = env => {
   const isProduction = env.NODE_ENV === "production";
+  console.info("isProduction:", isProduction);
 
   return {
     mode: isProduction ? "production" : "development",
     entry: "./src/index.js",
     output: {
-      filename: isProduction ? "[name].[chunkhash].js" : "[name].[hash].js",
+      filename: isProduction ? "[name].[contenthash].js" : "[name].[hash].js",
       path: path.resolve(__dirname, "dist")
     },
     module: {
@@ -37,18 +40,40 @@ module.exports = env => {
           test: /\.css$/,
           use: [
             {
-              loader: MiniCssExtractPlugin.loader
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: !isProduction
+              }
             },
-            "css-loader"
+            "css-loader",
+            {
+              loader: "postcss-loader",
+              options: {
+                plugins: [
+                  require("autoprefixer"),
+                ]
+              }
+            }
           ]
         },
         {
           test: /\.less$/,
           use: [
             {
-              loader: MiniCssExtractPlugin.loader
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: !isProduction
+              }
             },
             "css-loader",
+            {
+              loader: "postcss-loader",
+              options: {
+                plugins: [
+                  require("autoprefixer"),
+                ]
+              }
+            },
             "less-loader"
           ]
         },
@@ -56,9 +81,21 @@ module.exports = env => {
           test: /\.scss$/,
           use: [
             {
-              loader: MiniCssExtractPlugin.loader
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: !isProduction
+              }
             },
             "css-loader",
+            {
+              loader: "postcss-loader",
+              options: {
+                plugins: [
+                  require("autoprefixer"),
+                ],
+                sourceMap: isProduction ? false : true
+              }
+            },
             "sass-loader"
           ]
         },
@@ -85,8 +122,16 @@ module.exports = env => {
         }
       }),
       new MiniCssExtractPlugin({
-        filename: "[name].css",
-        chunkFilename: "[id].css"
+        filename: isProduction ? "[name].[contenthash].css" : "[name].css",
+        chunkFilename: isProduction ? "[id].[contenthash].css" : "[id].css"
+      }),
+      new OptimizeCssAssetsPlugin({
+        assetNameRegExp: /\.css$/g,
+        cssProcessor: require("cssnano"),
+        cssProcessorPluginOptions: {
+          preset: ["default", { discardComments: { removeAll: true } }]
+        },
+        canPrint: true
       })
     ],
     devtool: isProduction ? "" : "inline-source-map",
@@ -97,6 +142,7 @@ module.exports = env => {
     },
     optimization: {
       splitChunks: {
+        // 提取公共第三放插件
         cacheGroups: {
           commons: {
             test: /[\\/]node_modules[\\/]/,

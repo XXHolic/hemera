@@ -91,7 +91,7 @@ chunkname 是未被列在entry中，却又需要被打包出来的文件命名�
 https://www.cnblogs.com/toward-the-sun/p/6147324.html
 
 ## 2 生成和开发环境区分
-
+done
 
 ## 3 加入 redux
 

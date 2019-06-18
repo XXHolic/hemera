@@ -5,6 +5,8 @@ import _ from 'lodash';
 
 import './addressBook.scss'
 
+import logo from "../../images/logo.svg";
+
 
 class AddressBook extends Component {
 
@@ -20,7 +22,8 @@ class AddressBook extends Component {
         <Header content="通讯录" />
         <div className="flex1">
           <div className="tc">
-            <div className="address-book-text">{msg}</div>
+            <img src={logo} />
+            {/* <div className="address-book-text">{msg}</div> */}
           </div>
         </div>
         <Footer />

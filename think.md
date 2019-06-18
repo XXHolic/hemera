@@ -36,6 +36,12 @@ https://www.jianshu.com/p/bf6b45ce5bcc
 ### 刷新后 资源或页面 404
 https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually/36623117#36623117
 
+### 提取的 css 样式没有兼容性前缀
+在 package.json 中配置 browserslist 字段就会处理，推测是如果不配置，默认是不会带兼容性前缀
+
+### 在 post-loader 中配置 cssnano 没有去重
+使用 OptimizeCssAssetsPlugin
+
 
 ## 插件
 ```shell
@@ -77,12 +83,12 @@ npm install sass-loader node-sass --save-dev
 npm install --save-dev extract-text-webpack-plugin
 
 ### mini-css-extract-plugin
-提取分离 css
+提取分离 css，当没有压缩
 
 https://github.com/webpack-contrib/mini-css-extract-plugin
 
 ### CommonsChunkPlugin
-在 webpack4 中已移除
+在 webpack4 中已移除，使用 optimization 配置项
 
 ### webpack-bundle-analyzer
 分析
