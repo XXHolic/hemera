@@ -8,6 +8,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 var OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
+const webpack = require("webpack");
+
 module.exports = env => {
   const isProduction = env.NODE_ENV === "production";
   console.info("isProduction:", isProduction);
@@ -127,12 +129,15 @@ module.exports = env => {
           preset: ["default", { discardComments: { removeAll: true } }]
         },
         canPrint: true
-      })
+      }),
+      new webpack.NamedModulesPlugin(),
+      new webpack.HotModuleReplacementPlugin()
     ],
     devtool: isProduction ? "" : "source-map",
     devServer: {
       contentBase: path.join(__dirname, "dist"),
       port: 9000,
+      hot: true,
       overlay: true, // 如果代码出错，会在浏览器页面弹出“浮动层”。
       historyApiFallback: {
         rewrites: [{ from: /.*/, to: "/index.html" }]

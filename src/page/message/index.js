@@ -21,7 +21,7 @@ class Message extends Component {
         <div className="flex1">
           <div className="tc">
             <img src={logo} />
-            <div>{msg}</div>
+            <div className="message-text">{msg}</div>
           </div>
         </div>
         <Footer />
