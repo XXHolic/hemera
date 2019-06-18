@@ -31,7 +31,8 @@ module.exports = env => {
               plugins: [
                 "@babel/transform-arrow-functions",
                 ["@babel/plugin-proposal-decorators", { legacy: true }],
-                ["@babel/plugin-proposal-class-properties", { loose: true }]
+                ["@babel/plugin-proposal-class-properties", { loose: true }],
+                "@babel/plugin-syntax-dynamic-import"
               ]
             }
           }
@@ -49,9 +50,7 @@ module.exports = env => {
             {
               loader: "postcss-loader",
               options: {
-                plugins: [
-                  require("autoprefixer"),
-                ]
+                plugins: [require("autoprefixer")]
               }
             }
           ]
@@ -69,9 +68,7 @@ module.exports = env => {
             {
               loader: "postcss-loader",
               options: {
-                plugins: [
-                  require("autoprefixer"),
-                ]
+                plugins: [require("autoprefixer")]
               }
             },
             "less-loader"
@@ -90,9 +87,7 @@ module.exports = env => {
             {
               loader: "postcss-loader",
               options: {
-                plugins: [
-                  require("autoprefixer"),
-                ],
+                plugins: [require("autoprefixer")],
                 sourceMap: isProduction ? false : true
               }
             },
@@ -134,11 +129,14 @@ module.exports = env => {
         canPrint: true
       })
     ],
-    devtool: isProduction ? "" : "inline-source-map",
+    devtool: isProduction ? "" : "source-map",
     devServer: {
-      contentBase: "./dist",
+      contentBase: path.join(__dirname, "dist"),
       port: 9000,
-      historyApiFallback: true
+      overlay: true, // 如果代码出错，会在浏览器页面弹出“浮动层”。
+      historyApiFallback: {
+        rewrites: [{ from: /.*/, to: "/index.html" }]
+      }
     },
     optimization: {
       splitChunks: {

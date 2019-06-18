@@ -42,6 +42,13 @@ https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-re
 ### 在 post-loader 中配置 cssnano 没有去重
 使用 OptimizeCssAssetsPlugin
 
+### Support for the experimental syntax 'dynamicImport' isn't currently enabled
+使用插件 @babel/plugin-syntax-dynamic-import
+
+https://github.com/styleguidist/react-styleguidist/issues/987
+
+### 异步加载组件后，抽离的 css 文件内有重复的 css
+
 
 ## 插件
 ```shell

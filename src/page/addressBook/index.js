@@ -23,7 +23,7 @@ class AddressBook extends Component {
         <div className="flex1">
           <div className="tc">
             <img src={logo} />
-            {/* <div className="address-book-text">{msg}</div> */}
+            <div className="address-book-text">{msg}</div>
           </div>
         </div>
         <Footer />

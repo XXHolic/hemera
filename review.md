@@ -17,6 +17,8 @@ path.resolve() 方法将路径或路径片段的序列解析为绝对路径。
 
 在 webpack 中经常看到的变量 __dirname 在 node 中表示当前目录名，与 __filename 的 path.dirname() 相同。
 
+#### path.join(__dirname, 'dist')
+path.join() 方法使用平台特定的分隔符作为定界符将所有给定的 path 片段连接在一起，然后规范化生成的路径。
 
 ### output 中 filename 、chunkname 参数含义
 才选项决定了每个输出 bundle 的名称，对于单个入口，filename 可以是一个静态名称。
@@ -96,5 +98,7 @@ done
 ## 3 加入 redux
 
 ## 4 css 的兼容性和压缩处理
+done
 
 ## 5 代码分离
+done
