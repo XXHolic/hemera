@@ -19,7 +19,8 @@ module.exports = env => {
     entry: "./src/index.js",
     output: {
       filename: isProduction ? "[name].[contenthash].js" : "[name].[hash].js",
-      path: path.resolve(__dirname, "dist")
+      path: path.resolve(__dirname, "dist"),
+      publicPath: "/"
     },
     module: {
       rules: [
@@ -135,13 +136,11 @@ module.exports = env => {
     ],
     devtool: isProduction ? "" : "source-map",
     devServer: {
-      contentBase: path.join(__dirname, "dist"),
+      contentBase: path.resolve(__dirname, "dist"),
       port: 9000,
       hot: true,
       overlay: true, // 如果代码出错，会在浏览器页面弹出“浮动层”。
-      historyApiFallback: {
-        rewrites: [{ from: /.*/, to: "/index.html" }]
-      }
+      historyApiFallback: true
     },
     optimization: {
       splitChunks: {
