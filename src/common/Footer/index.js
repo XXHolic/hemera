@@ -21,8 +21,11 @@ class Footer extends Component {
            </Link>
          </div>
          <div className="flex-column flex1 tc main-footer-nav">
-           <span className="iconfont">&#xe628;</span>
-           <div>发现</div>
+           <Link to="/page/find">
+            <span className="iconfont">&#xe628;</span>
+            <div>发现</div>
+
+           </Link>
          </div>
          <div className="flex-column flex1 tc main-footer-nav">
            <span className="iconfont">&#xe61d;</span>
