@@ -2,6 +2,8 @@ import { combineReducers } from "redux";
 
 const todos = (state = [], action) => {
   switch (action.type) {
+    case "TODO_LIST":
+      return action.data;
     case "ADD_TODO":
       return [
         ...state,

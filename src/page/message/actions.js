@@ -1,4 +1,4 @@
-import fetch from 'cross-fetch';
+import fetch from "cross-fetch";
 
 let nextTodoId = 0;
 export const addTodo = text => {
@@ -17,11 +17,17 @@ export const toggleTodo = id => {
 };
 
 export function fetchTodoList(url) {
-
   return function(dispatch) {
-
-    return fetch(url);
-    // return fetch(url).then(response => response.json(),error => console.log("An error occurred.", error));
-
+    return fetch(url)
+      .then(
+        response => {
+          return response.json();
+        },
+        error => console.log("An error occurred.", error)
+      )
+      .then(data => {
+        console.info("data", data);
+        dispatch({ type: "TODO_LIST", data:data.data });
+      });
   };
 }

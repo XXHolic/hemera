@@ -22,8 +22,12 @@ class Message extends Component {
 
   componentDidMount() {
     store.dispatch(addTodo("dsafdsa"));
-    store.dispatch(fetchTodoList('./data.json'));
-    console.info("state", store.getState());
+    store.dispatch(
+      fetchTodoList("https://xxholic.github.io/lab/data/hemeraData.json")
+    ).then(()=>{
+      console.info("state", store.getState());
+    });
+
   }
 
   render () {
