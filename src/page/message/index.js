@@ -1,15 +1,29 @@
 import React, {Component} from 'react';
+import thunk from "redux-thunk";
+import { createStore, applyMiddleware } from "redux";
 import Footer from '../../common/Footer'
 import Header from '../../common/Header'
 import _ from 'lodash';
+import { addTodo, fetchTodoList } from "./actions";
+import todoApp from "./reducers";
 
 import './message.scss';
 import logo from '../../images/logo.svg'
 
+// console.info("thunk", thunk);
+
+const store = createStore(
+  todoApp,
+  applyMiddleware(
+    thunk,
+  )
+);
 class Message extends Component {
 
   componentDidMount() {
-
+    store.dispatch(addTodo("dsafdsa"));
+    store.dispatch(fetchTodoList('./data.json'));
+    console.info("state", store.getState());
   }
 
   render () {

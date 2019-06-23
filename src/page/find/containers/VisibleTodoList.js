@@ -1,4 +1,5 @@
-import {connect} from 'react-redux';
+// import { connect } from "react-redux/src/index";
+import { connect } from "react-redux";
 import TodoList from "../components/TodoList";
 import { toggleTodo } from '../actions';
 
