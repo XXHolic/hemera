@@ -11,7 +11,7 @@ class Message extends Component {
 
   componentDidMount() {
     const {dispatch,message} = this.props;
-    dispatch(addMessage("dsafdsa"));
+    // dispatch(addMessage("dsafdsa"));
 
     dispatch(
       fetchTodoList("https://xxholic.github.io/lab/data/hemeraData.json")
