@@ -1,23 +1,50 @@
 import React from "react";
-import { BrowserRouter as Router,Route,Redirect } from "react-router-dom";
-// import asyncComponent from './common/asyncComponent';
+import { Provider, connect } from "react-redux";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import loadable from "@loadable/component";
+import configureStore from "./configureStore";
+
+
+const store = configureStore();
+
+const Message = loadable(() => import("./page/message"));
+const AddressBook = loadable(() => import("./page/addressBook"));
+const Find = loadable(() => import("./page/find"));
+
+const ConnectedMessage = connect(
+  state => { return {
+    message: state.message
+  }}
+)(Message);
 
 const App = () => {
-  // const Message = asyncComponent(()=>import ("./page/message"));
-  // const AddressBook = asyncComponent(() => import("./page/addressBook"));
-  const Message = loadable(()=>import ("./page/message"));
-  const AddressBook = loadable(() => import("./page/addressBook"));
-  const Find = loadable(() => import("./page/find"));
 
   return (
-    <Router>
-      <Route path="/" exact component={Message} />
-      <Route path="/page/addressBook" exact component={AddressBook} />
-      <Route path="/page/find" exact component={Find} />
-      <Redirect to="/" />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Route
+          path="/"
+          exact
+          render={routeProps => <ConnectedMessage {...store} {...routeProps} />}
+        />
+        <Route
+          path="/page/addressBook"
+          exact
+          render={routeProps => (
+            <AddressBook {...store} {...routeProps} />
+          )}
+        />
+        <Route
+          path="/page/find"
+          exact
+          render={routeProps => (
+            <Find {...store} {...routeProps} />
+          )}
+        />
+        <Redirect to="/" />
+      </Router>
+    </Provider>
   );
-}
+};
 
 export default App;

@@ -1,35 +1,26 @@
 import React, {Component} from 'react';
-import thunk from "redux-thunk";
-import { createLogger } from "redux-logger";
-import { createStore, applyMiddleware } from "redux";
 import Footer from '../../common/Footer'
 import Header from '../../common/Header'
 import _ from 'lodash';
-import { addTodo, fetchTodoList } from "./actions";
-import todoApp from "./reducers";
+// import { addTodo, fetchTodoList } from "./actions";
+import { addMessage } from "../../actions";
 
 import './message.scss';
 import logo from '../../images/logo.svg'
 
-// console.info("thunk", thunk);
-const loggerMiddleware = createLogger();
-const store = createStore(
-  todoApp,
-  applyMiddleware(
-    thunk,
-    loggerMiddleware
-  )
-);
 class Message extends Component {
 
   componentDidMount() {
+    console.info('this.props',this.props)
+    const {dispatch} = this.props;
+    dispatch(addMessage("dsafdsa"));
 
-    store.dispatch(addTodo("dsafdsa"));
-    store.dispatch(
-      fetchTodoList("https://xxholic.github.io/lab/data/hemeraData.json")
-    ).then(()=>{
-      console.info("state", store.getState());
-    });
+    // store.dispatch(addTodo("dsafdsa"));
+    // store.dispatch(
+    //   fetchTodoList("https://xxholic.github.io/lab/data/hemeraData.json")
+    // ).then(()=>{
+    //   console.info("state", store.getState());
+    // });
 
   }
 

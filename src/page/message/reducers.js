@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-const todos = (state = [], action) => {
+const message = (state = [], action) => {
   switch (action.type) {
     case "TODO_LIST":
       return action.data;
@@ -22,4 +22,4 @@ const todoApp = combineReducers({
   todos
 });
 
-export default todoApp;
+export default message;
