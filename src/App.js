@@ -16,6 +16,16 @@ const ConnectedMessage = connect(
     message: state.message
   }}
 )(Message);
+const ConnectedAddressBook = connect(state => {
+  return {
+    addressBook: state.addressBook
+  };
+})(AddressBook);
+const ConnectedFind = connect(state => {
+  return {
+    find: state.find
+  };
+})(Find);
 
 const App = () => {
 
@@ -25,21 +35,21 @@ const App = () => {
         <Route
           path="/"
           exact
-          render={routeProps => <ConnectedMessage {...store} {...routeProps} />}
+          render={routeProps => (
+            <ConnectedMessage {...store} {...routeProps} />
+          )}
         />
         <Route
           path="/page/addressBook"
           exact
           render={routeProps => (
-            <AddressBook {...store} {...routeProps} />
+            <ConnectedAddressBook {...store} {...routeProps} />
           )}
         />
         <Route
           path="/page/find"
           exact
-          render={routeProps => (
-            <Find {...store} {...routeProps} />
-          )}
+          render={routeProps => <ConnectedFind {...store} {...routeProps} />}
         />
         <Redirect to="/" />
       </Router>

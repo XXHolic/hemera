@@ -32,6 +32,14 @@ const message = (state, action) => {
         todos
       };
     }
+    case actionsType.TODO_LIST:{
+      let todos = action.data;
+
+      return {
+        ...actualState,
+        todos
+      };
+    }
 
     default:
       return actualState;
@@ -39,6 +47,7 @@ const message = (state, action) => {
 };
 
 const addressBook = (state = {}, action) => {
+  console.info("ddd", action.type);
   switch (action.type) {
     case actionsType.ADD_MESSAGE:
       return state;
