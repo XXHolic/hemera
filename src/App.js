@@ -12,6 +12,7 @@ const store = configureStore();
 const Message = loadable(() => import("./page/message"));
 const AddressBook = loadable(() => import("./page/addressBook"));
 const Find = loadable(() => import("./page/find"));
+const Mine = loadable(() => import("./page/mine"));
 
 const ConnectedMessage = connect(state => {
   return {
@@ -31,6 +32,12 @@ const ConnectedFind = connect(state => {
     global: state.global
   };
 })(Find);
+const ConnectedMine = connect(state => {
+  return {
+    mine: state.mine,
+    global: state.global
+  };
+})(Mine);
 
 const App = (
   <Provider store={store}>
@@ -50,6 +57,10 @@ const App = (
         <Route
           path="/page/find"
           render={routeProps => <ConnectedFind {...store} {...routeProps} />}
+        />
+        <Route
+          path="/page/mine"
+          render={routeProps => <ConnectedMine {...store} {...routeProps} />}
         />
         <Redirect to="/page/message" />
       </Main>

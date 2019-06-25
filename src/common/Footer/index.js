@@ -65,7 +65,7 @@ class Footer extends Component {
         <div className="flex-column flex1 tc main-footer-nav">
           <Link
             className={nav4Class}
-            to="/"
+            to="/page/mine"
             onClick={this.onClickNav.bind(this, "4")}
           >
             <span className="iconfont">&#xe61d;</span>
