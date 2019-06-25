@@ -1,7 +1,6 @@
 html {
   font-size: 62.5%;
   text-size-adjust: 100%;
-
 }
 body {
   margin: 0;
@@ -38,6 +37,10 @@ template {
 }
 a {
   background-color: transparent;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-focus: none;
+  -moz-user-select: none;
 }
 a:active,
 a:hover {

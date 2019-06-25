@@ -1,52 +1,18 @@
-import { VisibilityFilters } from "./actions";
+import { mapReducers } from "redux-async-actions-reducers";
+import { actionsType } from "../../actionsType";
 
-const { SHOW_ALL } = VisibilityFilters;
-const initialState = {
-  visibilityFilter: VisibilityFilters.SHOW_ALL,
-  todos: []
-};
+const reducers = {};
+const initState = {};
 
-function visibilityFilterFun(state = SHOW_ALL, action) {
-  switch (action.type) {
-    case "SET_VISIBILITY_FILTER":
-      return action.filter;
-    default:
-      return state;
-  }
-}
-
-function todosFun(state = [], action) {
+reducers.addressBook = (state = initState, action) => {
   switch (action.type) {
     case "ADD_TODO":
-      return [...state, { text: action.text, completed: false }];
-    case "TOGGLE_TODO": {
-      const newTodos = state.map((todo, index) => {
-        if (index === action.index) {
-          return Object.assign({}, todo, {
-            completed: !todo.completed
-          });
-        }
-        return todo;
-      });
-      return newTodos;
-    }
+
+    case "TOGGLE_TODO":
 
     default:
       return state;
   }
-}
+};
 
-function todoApp(state = initialState, action) {
-  const visibilityFilter = visibilityFilterFun(
-    state.visibilityFilter,
-    action
-  );
-  const todos = todosFun(state.todos, action);
-  // debugger
-  return {
-    visibilityFilter,
-    todos
-  };
-}
-
-export default todoApp;
+mapReducers(reducers);

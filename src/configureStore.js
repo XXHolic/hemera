@@ -11,6 +11,11 @@ export default function configureStore(preloadedState) {
   return createStore(
     app,
     preloadedState,
-    compose(applyMiddleware(thunk, loggerMiddleware),window.devToolsExtension ? window.devToolsExtension() : f => f )
+    compose(
+      applyMiddleware(thunk, loggerMiddleware),
+      window.__REDUX_DEVTOOLS_EXTENSION__
+        ? window.__REDUX_DEVTOOLS_EXTENSION__()
+        : f => f
+    )
   );
 }

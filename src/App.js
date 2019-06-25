@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import loadable from "@loadable/component";
 // import { bindAsyncActions } from "redux-async-actions-reducers";
 import configureStore from "./configureStore";
+import Main from "./Main";
 // import actions from './actions';
-
 
 const store = configureStore();
 
@@ -13,14 +13,12 @@ const Message = loadable(() => import("./page/message"));
 const AddressBook = loadable(() => import("./page/addressBook"));
 const Find = loadable(() => import("./page/find"));
 
-const ConnectedMessage = connect(
-  state => {
-    return {
-      message: state.message,
-      global: state.global
-    };
-  }
-)(Message);
+const ConnectedMessage = connect(state => {
+  return {
+    message: state.message,
+    global: state.global
+  };
+})(Message);
 const ConnectedAddressBook = connect(state => {
   return {
     addressBook: state.addressBook,
@@ -34,34 +32,29 @@ const ConnectedFind = connect(state => {
   };
 })(Find);
 
-const App = () => {
-
-  return (
-    <Provider store={store}>
-      <Router>
+const App = (
+  <Provider store={store}>
+    <Router>
+      <Main>
         <Route
-          path="/"
+          path="/page/message"
           exact
-          render={routeProps => (
-            <ConnectedMessage {...store} {...routeProps} />
-          )}
+          render={routeProps => <ConnectedMessage {...store} {...routeProps} />}
         />
         <Route
           path="/page/addressBook"
-          exact
           render={routeProps => (
             <ConnectedAddressBook {...store} {...routeProps} />
           )}
         />
         <Route
           path="/page/find"
-          exact
           render={routeProps => <ConnectedFind {...store} {...routeProps} />}
         />
-        <Redirect to="/" />
-      </Router>
-    </Provider>
-  );
-};
+        <Redirect to="/page/message" />
+      </Main>
+    </Router>
+  </Provider>
+);
 
 export default App;

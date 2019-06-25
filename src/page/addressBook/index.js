@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Footer from "../../common/Footer";
 import Header from "../../common/Header";
 
 
@@ -16,7 +15,7 @@ class AddressBook extends Component {
     const msg = "Address-Book";
 
     return (
-      <div className="main-container flex-column">
+      <div className="flex-column">
         <Header content="通讯录" />
         <div className="flex1">
           <div className="tc">
@@ -24,7 +23,6 @@ class AddressBook extends Component {
             <div className="address-book-text">{msg}</div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
