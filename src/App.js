@@ -2,7 +2,9 @@ import React from "react";
 import { Provider, connect } from "react-redux";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import loadable from "@loadable/component";
+// import { bindAsyncActions } from "redux-async-actions-reducers";
 import configureStore from "./configureStore";
+// import actions from './actions';
 
 
 const store = configureStore();
@@ -12,18 +14,23 @@ const AddressBook = loadable(() => import("./page/addressBook"));
 const Find = loadable(() => import("./page/find"));
 
 const ConnectedMessage = connect(
-  state => { return {
-    message: state.message
-  }}
+  state => {
+    return {
+      message: state.message,
+      global: state.global
+    };
+  }
 )(Message);
 const ConnectedAddressBook = connect(state => {
   return {
-    addressBook: state.addressBook
+    addressBook: state.addressBook,
+    global: state.global
   };
 })(AddressBook);
 const ConnectedFind = connect(state => {
   return {
-    find: state.find
+    find: state.find,
+    global: state.global
   };
 })(Find);
 

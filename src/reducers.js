@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import {combineAsyncReducers} from 'redux-async-actions-reducers';
 import { actionsType } from "./actionsType";
 
 // 全局的 state
@@ -8,6 +9,28 @@ const app1 = (state = initState, action) => {
       return {
         ...state,
         text: action.text
+      };
+    default:
+      return state;
+  }
+};
+
+const reducers = {
+  addressBook: null,
+  find: null,
+  message: null
+};
+
+const globalInitState={
+  test:''
+};
+
+reducers.global = (state = globalInitState, action) => {
+  switch (action.type) {
+    case actionsType.TEST:
+      return {
+        ...state,
+        test: action.text
       };
     default:
       return state;
@@ -65,9 +88,11 @@ const find = (state = {}, action) => {
   }
 };
 
-const app = combineReducers({
-  message,
-  addressBook,
-  find
-});
+// const app = combineReducers({
+//   message,
+//   addressBook,
+//   find
+// });
+
+const app = combineAsyncReducers(reducers);
 export default app;

@@ -15,14 +15,7 @@ export const test = text => {
 //   };
 // }
 
-export const addMessage = (text) => {
-  return {
-    type: actionsType.ADD_MESSAGE,
-    text
-  };
-}
-
-export function fetchTodoList(url) {
+export function fetchMessageList(url) {
   return function(dispatch) {
     return fetch(url)
       .then(
@@ -33,7 +26,10 @@ export function fetchTodoList(url) {
       )
       .then(data => {
         console.info("data", data);
-        dispatch({ type: actionsType.TODO_LIST, data: data.data });
+        dispatch({
+          type: actionsType.GET_MESSAGE_LIST,
+          data: data.data
+        });
       });
   };
 }

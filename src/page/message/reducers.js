@@ -1,25 +1,21 @@
-import { combineReducers } from "redux";
+import {mapReducers} from 'redux-async-actions-reducers';
+import { actionsType } from "../../actionsType";
 
-const message = (state = [], action) => {
+const reducers = {};
+const initState = {
+  messageList:[]
+};
+
+reducers.message = (state = initState, action) => {
   switch (action.type) {
-    case "TODO_LIST":
-      return action.data;
-    case "ADD_TODO":
-      return [
+    case actionsType.GET_MESSAGE_LIST:
+      return {
         ...state,
-        {
-          id: action.id,
-          text: action.text,
-          completed: false
-        }
-      ];
+        messageList: action.data
+      };
     default:
       return state;
   }
 };
 
-const todoApp = combineReducers({
-  todos
-});
-
-export default message;
+mapReducers(reducers);

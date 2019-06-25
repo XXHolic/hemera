@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import Footer from '../../common/Footer'
 import Header from '../../common/Header'
 import _ from 'lodash';
-import { addMessage, fetchTodoList } from "../../actions";
+import {fetchMessageList} from "../../actions";
+import './reducers';
 
 import './message.scss';
 import logo from '../../images/logo.svg'
@@ -10,13 +11,14 @@ import logo from '../../images/logo.svg'
 class Message extends Component {
 
   componentDidMount() {
+    console.info(this.props);
     const {dispatch,message} = this.props;
     // dispatch(addMessage("dsafdsa"));
 
     dispatch(
-      fetchTodoList("https://xxholic.github.io/lab/data/hemeraData.json")
+      fetchMessageList("https://xxholic.github.io/lab/data/hemeraData.json")
     ).then(()=>{
-      console.info("state", message);
+      console.info("state", this.props.message);
     });
 
   }
