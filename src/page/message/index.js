@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 
 import Header from "../../common/Header";
-import _ from "lodash";
+// import _ from "lodash";
 import { fetchMessageList } from "../../actions";
 import "./reducers";
 
 import "./message.scss";
-import logo from "../../images/logo.svg";
 
 class Message extends Component {
   componentDidMount() {
@@ -22,14 +21,15 @@ class Message extends Component {
   }
 
   render() {
-    const msg = _.join(["Message-", "List"], "");
 
     return (
       <div className="flex-column">
         <Header content="X 信" />
-        <div className="tc">
-          <img src={logo} />
-          <div className="message-text">{msg}</div>
+        <div>
+          <p>世界上最远的距离 不是树与树的距离</p>
+          <p>而是同根生长的树枝 却无法在风中相依</p>
+          <p>世界上最远的距离 不是树枝无法相依</p>
+          <p>而是相互了望的星星 却没有交汇的轨迹</p>
         </div>
       </div>
     );

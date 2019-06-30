@@ -9,7 +9,9 @@ class Main extends Component {
   render() {
     return (
       <div className="main-container flex-column">
-        <div className="flex1">{this.props.children}</div>
+        <div className="main-container-wrap flex1">
+          {this.props.children}
+        </div>
         <Footer />
       </div>
     );

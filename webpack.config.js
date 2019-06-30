@@ -98,7 +98,7 @@ module.exports = env => {
           ]
         },
         {
-          test: /\.(png|svg|jpg|gif)$/,
+          test: /\.(png|svg|jpg|jpeg|gif)$/,
           use: ["file-loader"]
         },
         {
@@ -110,7 +110,7 @@ module.exports = env => {
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        title: "Hello React",
+        title: "X 信",
         favicon: "./public/favicon.ico",
         template: "./public/index.html",
         minify: {

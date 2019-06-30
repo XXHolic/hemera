@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import Header from "../../common/Header";
 
-
 import "./addressBook.scss";
 
-import logo from "../../images/logo.svg";
 
 class AddressBook extends Component {
   componentDidMount() {
@@ -12,16 +10,15 @@ class AddressBook extends Component {
   }
 
   render() {
-    const msg = "Address-Book";
 
     return (
       <div className="flex-column">
         <Header content="通讯录" />
-        <div className="flex1">
-          <div className="tc">
-            <img src={logo} />
-            <div className="address-book-text">{msg}</div>
-          </div>
+        <div>
+          <p>世界上最远的距离 不是星星之间的轨迹 </p>
+          <p>而是纵然轨迹交汇 却在转瞬间无处寻觅</p>
+          <p>世界上最远的距离 不是瞬间便无处寻觅</p>
+          而是尚未相遇便注定无法相聚
         </div>
       </div>
     );

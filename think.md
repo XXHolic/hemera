@@ -37,6 +37,8 @@ npm i -D @babel/plugin-proposal-class-properties
 https://www.jianshu.com/p/bf6b45ce5bcc
 
 ### 刷新后 资源或页面 404
+https://www.cnblogs.com/YZH-chengdu/p/6855237.html
+
 https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually/36623117#36623117
 
 ### 提取的 css 样式没有兼容性前缀

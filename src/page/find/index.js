@@ -14,7 +14,8 @@ class Find extends Component {
       <div className="flex-column">
         <Header content="发现" />
         <div className="flex1">
-          <div>{msg}</div>
+          <p>世界上最远的距离是鱼与飞鸟的距离 </p>
+          <p>一个在天 一个却深潜海底</p>
         </div>
       </div>
     );
