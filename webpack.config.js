@@ -110,7 +110,7 @@ module.exports = env => {
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        title: "X 信",
+        title: "",
         favicon: "./public/favicon.ico",
         template: "./public/index.html",
         minify: {
