@@ -1,8 +1,47 @@
-
+@import '../../css/variables.less';
 .list {
-
+  overflow: hidden;
+  position: relative;
 }
 
 .list-item {
+  position: relative;
+  align-items: center;
+  height: 55px;
+  background-color: @bgColor3;
+}
 
+.list-item::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 65px;
+  height: 1px;
+  background-color: @bgColor4;
+}
+
+.list-item-picture {
+  width: 65px;
+  padding: 0 10px 0 15px;
+}
+.list-item-picture-wrap {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  background-color: @bgColor;
+}
+
+.list-item-text {
+  padding: 0 15px 0 0;
+}
+.list-item-content {
+  color: @color3;
+}
+
+.list-item-name {
+  line-height: 1;
 }

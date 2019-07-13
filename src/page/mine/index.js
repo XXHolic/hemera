@@ -14,10 +14,10 @@ class Mine extends Component {
   render() {
 
     return (
-      <div className="flex-column">
+      <div className="flex-column flex1">
         <Header content="我的" />
         <div className="flex1">
-          <img src={logo}></img>
+          <img src={logo} />
         </div>
       </div>
     );

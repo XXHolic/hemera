@@ -11,7 +11,7 @@ class Find extends Component {
     const msg = "Find-List";
 
     return (
-      <div className="flex-column">
+      <div className="flex-column flex1">
         <Header content="发现" />
         <div className="flex1">
           <p>世界上最远的距离是鱼与飞鸟的距离 </p>

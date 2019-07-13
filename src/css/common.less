@@ -1,20 +1,27 @@
-@import './variables.less';
-
+@import "./variables.less";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 a {
   text-decoration: none;
   color: #000;
 }
 input {
-  margin: 0;
   border: 0;
-  padding: 0;
 }
 
 input:focus {
   outline: none;
 }
 
-html,body {
+ul {
+  list-style: none;
+}
+
+html,
+body {
   height: 100%;
   overflow: hidden;
   font-size: 12px;
@@ -61,4 +68,21 @@ img {
 .main-container-wrap {
   overflow: hidden;
   height: calc(100% - 50px);
+}
+
+.font1 {
+  font-size: @font1;
+}
+.font2 {
+  font-size: @font2;
+}
+.font3 {
+  font-size: @font3;
+}
+
+.ell {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
