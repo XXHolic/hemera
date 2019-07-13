@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 import Header from "../../common/Header";
 import Search from "../../common/Search";
-import {List,Item} from "../../common/List";
+import {List} from "../../common/List";
 import { fetchMessageList } from "../../actions";
 import "./reducers";
-
 import "./message.scss";
+import data from './data.json';
 
 class Message extends Component {
   componentDidMount() {
@@ -26,11 +26,9 @@ class Message extends Component {
     return (
       <div className="flex-column flex1">
         <Header content="X 信" />
-        <div className="flex1">
+        <div className="page-content flex1">
           <Search />
-          <div>
-            <List></List>
-          </div>
+          <List data={data}></List>
         </div>
       </div>
     );
