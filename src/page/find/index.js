@@ -31,7 +31,7 @@ class Find extends Component {
             });
 
             return (
-              <ul className="find-row list-border" key={index}>
+              <ul className="mb10 list-border" key={index}>
                 {ele}
               </ul>
             );

@@ -1,23 +1,39 @@
 import React, { Component } from "react";
 import Header from "../../common/Header";
-
+import { Item } from "../../common/List";
 
 import "./mine.less";
 
-import logo from "../../images/logo.svg";
+import data from "./data.json";
 
 class Mine extends Component {
-  componentDidMount() {
-
-  }
 
   render() {
 
     return (
       <div className="flex-column flex1">
         <Header content="我的" />
-        <div className="flex1">
-          <img src={logo} />
+        <div className="page-content flex1">
+          {data.map((item, index) => {
+            let ele = item.map((itemData, index) => {
+              const itemBorderStyle =
+                index === item.length - 1 ? "" : "show-item-border";
+              return (
+                <Item
+                  className={itemBorderStyle}
+                  data={itemData}
+                  arrow={true}
+                  key={itemData.id}
+                />
+              );
+            });
+
+            return (
+              <ul className="mb10 list-border" key={index}>
+                {ele}
+              </ul>
+            );
+          })}
         </div>
       </div>
     );
