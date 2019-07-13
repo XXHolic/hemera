@@ -4,6 +4,11 @@
   position: relative;
 }
 
+.list-border {
+  border-top: 1px solid @bgColor4;
+  border-bottom: 1px solid @bgColor4;
+}
+
 .list-item {
   position: relative;
   align-items: center;
@@ -11,7 +16,7 @@
   background-color: @bgColor3;
 }
 
-.list-item::after {
+.list-item-after::after {
   content: '';
   position: absolute;
   right: 0;
@@ -21,10 +26,26 @@
   background-color: @bgColor4;
 }
 
+.list-item-icon {
+  width: 55px;
+  line-height: 1;
+}
+
+.show-item-border::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 55px;
+  height: 1px;
+  background-color: @bgColor4;
+}
+
 .list-item-picture {
   width: 65px;
   padding: 0 10px 0 15px;
 }
+
 .list-item-picture-wrap {
   align-items: center;
   justify-content: center;

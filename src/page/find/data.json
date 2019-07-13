@@ -1,0 +1,35 @@
+[
+  [
+    {
+      "id": 1,
+      "icon": "icon-43zihao18",
+      "name": "朋友圈"
+    }
+  ],
+  [
+    {
+      "id": 3,
+      "icon": "icon-18zihao18",
+      "name": "扫一扫"
+    },
+    {
+      "id": 4,
+      "icon": "icon-97",
+      "name": "摇一摇"
+    }
+  ],
+  [
+    {
+      "id": 5,
+      "icon": "icon-icon-test12",
+      "name": "附近的人"
+    }
+  ],
+  [
+    {
+      "id": 7,
+      "icon": "icon-19zihao18",
+      "name": "程序"
+    }
+  ]
+]
