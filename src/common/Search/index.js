@@ -28,9 +28,9 @@ function Search(props) {
     <div className="search">
       <input
         value={value}
-        className={`search-input ${style}`}
+        className={`search-input font2 ${style}`}
         placeholder={placeholder}
-        onChange={(e) => dispatch({ type: "change",value: e.target.value })}
+        onChange={e => dispatch({ type: "change", value: e.target.value })}
         onFocus={() => dispatch({ type: "focus" })}
         onBlur={() => dispatch({ type: "blur" })}
       />
