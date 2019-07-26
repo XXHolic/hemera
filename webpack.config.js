@@ -18,12 +18,22 @@ module.exports = env => {
     mode: isProduction ? "production" : "development",
     entry: "./src/index.js",
     output: {
-      filename:"[name].[hash].js",
+      filename: "[name].[hash].js",
       path: path.resolve(__dirname, "dist"),
       publicPath: "/"
     },
     module: {
       rules: [
+        {
+          enforce: "pre",
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: "eslint-loader",
+          options: {
+            eslintPath: path.join(__dirname, "src"),
+            formatter: require("eslint-friendly-formatter"),
+          }
+        },
         {
           test: /\.js$/,
           exclude: "/node_modules",
