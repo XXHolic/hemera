@@ -31,6 +31,8 @@
     "clean-webpack-plugin": "^2.0.2",
     "css-loader": "^3.0.0",
     "cssnano": "^4.1.10",
+    "eslint": "^6.1.0",
+    "eslint-plugin-react": "^7.14.3",
     "file-loader": "^4.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
@@ -51,7 +53,7 @@
   "dependencies": {
     "@loadable/component": "^5.10.1",
     "cross-fetch": "^3.0.4",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",

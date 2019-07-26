@@ -12,7 +12,7 @@ export default function configureStore(preloadedState) {
     app,
     preloadedState,
     compose(
-      applyMiddleware(thunk, loggerMiddleware),
+      applyMiddleware(thunk),
       window.__REDUX_DEVTOOLS_EXTENSION__
         ? window.__REDUX_DEVTOOLS_EXTENSION__()
         : f => f
