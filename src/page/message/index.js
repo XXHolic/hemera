@@ -30,23 +30,20 @@ class Message extends Component {
     });
   }
 
-  testClick = ()=> {
-    debugger;
-    this.setState({
-      text:'changed'
-    });
-  }
+  // testClick = ()=> {
+  //   debugger;
+  //   this.setState({
+  //     text:'changed'
+  //   });
+  // }
 
   render() {
-    const {text} = this.state;
     return (
       <div className="flex-column flex1">
         <Header content="X 信" />
         <div className="page-content flex1">
           <Search />
           <List data={data} />
-          <button onClick={this.testClick}>测试 setState</button>
-          {text}
         </div>
       </div>
     );
