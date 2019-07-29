@@ -8,6 +8,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 var OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
+const StyleLintPlugin = require("stylelint-webpack-plugin");
+
 const webpack = require("webpack");
 
 module.exports = env => {
@@ -31,12 +33,11 @@ module.exports = env => {
           use: [
             {
               options: {
-                formatter: require.resolve('eslint-friendly-formatter'),
-                eslintPath: require.resolve('eslint'),
-
+                formatter: require.resolve("eslint-friendly-formatter"),
+                eslintPath: require.resolve("eslint")
               },
-              loader: require.resolve('eslint-loader'),
-            },
+              loader: require.resolve("eslint-loader")
+            }
           ],
           include: path.join(__dirname, "src")
         },
@@ -134,6 +135,9 @@ module.exports = env => {
           removeComments: true, //移除HTML中的注释
           collapseWhitespace: false //删除空白符与换行符
         }
+      }),
+      new StyleLintPlugin({
+
       }),
       new MiniCssExtractPlugin({
         filename: isProduction ? "[name].[contenthash].css" : "[name].css",
