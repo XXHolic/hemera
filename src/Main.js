@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Footer from "./common/Footer";
 
 class Main extends Component {
@@ -17,5 +18,14 @@ class Main extends Component {
     );
   }
 }
+
+Main.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.node,
+    PropTypes.element
+  ])
+};
 
 export default Main;

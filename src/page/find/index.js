@@ -11,7 +11,7 @@ class Find extends Component {
   componentDidMount() {}
 
   render() {
-    const msg = "Find-List";
+    // const msg = "Find-List";
 
     return (
       <div className="flex-column flex1">

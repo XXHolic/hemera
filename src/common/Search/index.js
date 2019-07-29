@@ -1,4 +1,5 @@
 import React, {useReducer} from 'react';
+import PropTypes from 'prop-types';
 
 import "./style.less";
 function init(initial) {
@@ -37,5 +38,9 @@ function Search(props) {
     </div>
   );
 }
+
+Search.propTypes = {
+  placeholder:PropTypes.string
+};
 
 export default Search;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./style.less";
 import user1 from "./user1.jpeg";
 import user2 from "./user2.jpeg";
@@ -53,6 +54,12 @@ const Item = props => {
   );
 };
 
+Item.propTypes = {
+  data: PropTypes.object,
+  arrow: PropTypes.bool,
+  className: PropTypes.string
+};
+
 const List = props => {
   const {
     data = [{ id: 1, url: "q", name: "name", content: "content" }],
@@ -66,6 +73,11 @@ const List = props => {
       })}
     </ul>
   );
+};
+
+List.propTypes = {
+  data: PropTypes.object,
+  arrow: PropTypes.bool,
 };
 
 export { List, Item };

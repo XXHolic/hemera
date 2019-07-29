@@ -24,22 +24,22 @@ module.exports = env => {
     },
     module: {
       rules: [
-        // {
-        //   enforce: "pre",
-        //   test: /\.js$/,
-        //   exclude: /node_modules/,
-        //   use: [
-        //     {
-        //       options: {
-        //         formatter: require.resolve('eslint-friendly-formatter'),
-        //         eslintPath: require.resolve('eslint'),
+        {
+          enforce: "pre",
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              options: {
+                formatter: require.resolve('eslint-friendly-formatter'),
+                eslintPath: require.resolve('eslint'),
 
-        //       },
-        //       loader: require.resolve('eslint-loader'),
-        //     },
-        //   ],
-        //   include: path.join(__dirname, "src")
-        // },
+              },
+              loader: require.resolve('eslint-loader'),
+            },
+          ],
+          include: path.join(__dirname, "src")
+        },
         {
           test: /\.js$/,
           exclude: "/node_modules",

@@ -1,10 +1,10 @@
 import { applyMiddleware,compose } from "redux";
 import { createStore } from "redux-async-actions-reducers";
 import thunk from "redux-thunk";
-import { createLogger } from "redux-logger";
+// import { createLogger } from "redux-logger";
 import app from "./reducers";
 
-const loggerMiddleware = createLogger();
+// const loggerMiddleware = createLogger();
 
 
 export default function configureStore(preloadedState) {

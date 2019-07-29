@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import React, { Component } from "../../../node_modules/react/index";
-
+import PropTypes from 'prop-types';
 import Header from "../../common/Header";
 import Search from "../../common/Search";
 import {List} from "../../common/List";
@@ -20,7 +20,7 @@ class Message extends Component {
 
   componentDidMount() {
     // console.info(this.props);
-    const { dispatch, message } = this.props;
+    const { dispatch } = this.props;
     // dispatch(addMessage("dsafdsa"));
 
     dispatch(
@@ -49,5 +49,9 @@ class Message extends Component {
     );
   }
 }
+
+Message.propTypes = {
+  dispatch: PropTypes.func
+};
 
 export default Message;
