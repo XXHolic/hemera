@@ -1,0 +1,10 @@
+.main-header {
+  min-height: 40px;
+
+  .main-header-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+  }
+}
