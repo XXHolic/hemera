@@ -8,6 +8,8 @@ import { fetchMessageList } from "../../actions";
 import "./reducers";
 import "./message.scss";
 import data from './data.json';
+import RichText from "./RichText";
+
 
 class Message extends Component {
   constructor(props) {
@@ -44,6 +46,7 @@ class Message extends Component {
         <div className="page-content flex1">
           <Search />
           <List data={data} />
+          <RichText></RichText>
         </div>
       </div>
     );

@@ -76,7 +76,7 @@ const List = props => {
 };
 
 List.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
   arrow: PropTypes.bool,
 };
 

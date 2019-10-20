@@ -151,17 +151,22 @@ module.exports = env => {
         },
         canPrint: true
       }),
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
+       })
       // new webpack.NamedModulesPlugin(),
       // new webpack.HotModuleReplacementPlugin()
     ],
     devtool: isProduction ? "" : "source-map",
-    // devServer: {
-    //   contentBase: path.resolve(__dirname, "dist"),
-    //   port: 9000,
-    //   hot: true,
-    //   overlay: true, // 如果代码出错，会在浏览器页面弹出“浮动层”。
-    //   historyApiFallback: true
-    // },
+    devServer: {
+      contentBase: path.resolve(__dirname, "dist"),
+      port: 9000,
+      hot: true,
+      stats: "errors-only",
+      overlay: true, // 如果代码出错，会在浏览器页面弹出“浮动层”。
+      historyApiFallback: true
+    },
     optimization: {
       splitChunks: {
         // 提取公共第三放插件
