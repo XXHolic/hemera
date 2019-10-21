@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 // import React, { Component } from "../../../node_modules/react/index";
 import PropTypes from 'prop-types';
-import Header from "../../common/Header";
+// import Header from "../../common/Header";
 import Search from "../../common/Search";
-import {List} from "../../common/List";
+// import {List} from "../../common/List";
 import { fetchMessageList } from "../../actions";
 import "./reducers";
 import "./message.scss";
-import data from './data.json';
+// import data from './data.json';
 import RichText from "./RichText";
 
 
@@ -42,10 +42,10 @@ class Message extends Component {
   render() {
     return (
       <div className="flex-column flex1">
-        <Header content="X 信" />
+        {/* <Header content="X 信" /> */}
         <div className="page-content flex1">
           <Search />
-          <List data={data} />
+          {/* <List data={data} /> */}
           <RichText></RichText>
         </div>
       </div>
