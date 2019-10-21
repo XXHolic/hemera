@@ -33,9 +33,12 @@ class RichText extends Component {
 
   componentDidMount() {
 
+    // fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New']
     $('#summernote').summernote({
       height: 300,
       lang: 'zh-TW',
+      fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
+      // fontNames: ['宋体','仿宋','楷体','黑体','幼圆','华文行楷','华文隶书','华文细黑','新宋体','Microsoft Yahei','Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','Impact','Tahoma','Times New Roman', 'Verdana'],
       toolbar: [
         ['style', ['style']],
         ['font', ['bold', 'underline', 'clear']],
