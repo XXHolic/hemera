@@ -28,9 +28,11 @@ class RichText extends Component {
     this.handleBlur = this.handleBlur.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleInit = this.handleInit.bind(this);
   }
 
   componentDidMount() {
+
     $('#summernote').summernote({
       height: 300,
       lang: 'zh-TW',
@@ -49,7 +51,8 @@ class RichText extends Component {
         onChange: this.handleChange,
         onFocus: this.handleFocus,
         onBlur: this.handleBlur,
-        onImageUpload: this.handleUpload
+        onImageUpload: this.handleUpload,
+        onInit: this.handleInit
       }
     });
 
@@ -61,6 +64,7 @@ class RichText extends Component {
 
   handleChange (value) {
     console.log('Editable area change',value);
+
   }
 
   handleFocus () {
@@ -68,7 +72,8 @@ class RichText extends Component {
   }
 
   handleBlur () {
-    console.log('Editable area blur');
+    let value = $('#summernote').summernote('code')
+    console.log('Editable area blur',value);
   }
 
   handleUpload (files) {
@@ -104,6 +109,11 @@ class RichText extends Component {
     console.log('files',files);
     // $summernote.summernote('insertNode', imgNode);
 
+  }
+
+  handleInit() {
+    var markupStr = '<p>hello world</p>';
+    $('#summernote').summernote('code', markupStr);
   }
 
   render() {
