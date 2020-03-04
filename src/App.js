@@ -44,7 +44,7 @@ const App = (
     <Router>
       <Main>
         <Route
-          path="/page/message"
+          path={["/page/message",'/mobile']}
           exact
           render={routeProps => <ConnectedMessage {...store} {...routeProps} />}
         />
