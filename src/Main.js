@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+
 import Footer from "./common/Footer";
 
 class Main extends Component {
   constructor(props) {
     super(props)
+  }
+
+  componentDidCatch(e) {
+    console.info('e',e);
   }
 
   render() {

@@ -27,6 +27,8 @@ class Message extends Component {
       fetchMessageList("https://xxholic.github.io/lab/data/hemeraData.json")
     ).then(() => {
       // console.info("state", this.props.message);
+      // test();
+      // throw new Error('fdsfd');
     });
   }
 
