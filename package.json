@@ -7,7 +7,9 @@
     "build": "webpack --env.NODE_ENV=production --config webpack.config.js",
     "start": "webpack-dev-server --env.NODE_ENV=develop --open",
     "analyse": "webpack --profile --json > stats.json",
-    "show": "webpack-bundle-analyzer ./stats.json"
+    "show": "webpack-bundle-analyzer ./stats.json",
+    "storybook": "start-storybook -p 5005",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,10 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^6.0.27",
+    "@storybook/addon-essentials": "^6.0.27",
+    "@storybook/addon-links": "^6.0.27",
+    "@storybook/react": "^6.0.27",
     "autoprefixer": "^9.6.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
@@ -45,6 +51,7 @@
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
+    "react-is": "^17.0.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "stylelint": "^10.1.0",
