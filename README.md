@@ -7,9 +7,6 @@ npm install
 ```sh
 npm start
 ```
-线上效果：
-
-![online][url-online]
 
 
 
